@@ -1,0 +1,40 @@
+CREATE USER 'dev01'@'localhost' IDENTIFIED BY '#D@m9Rjn?Gs_Sm5r';
+
+GRANT ALL PRIVILEGES ON *.* TO 'dev01'@'localhost';
+
+CREATE DATABASE tecweb_projeto01;
+
+CREATE TABLE Users (
+id       INT          NOT NULL AUTO_INCREMENT,
+email    VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO Users (email, password) VALUES ('user01@example.com', '1234');
+
+INSERT INTO Users (email, password) VALUES ('user02@example.com', '4567');
+
+INSERT INTO Users (email, password) VALUES ('user03@example.com', '8910');
+
+INSERT INTO Users (email, password) VALUES ('user04@example.com', '1112');
+
+CREATE TABLE Tasks (
+id           INT NOT NULL AUTO_INCREMENT,
+user_email   VARCHAR(255) NOT NULL,
+description  LONGTEXT NOT NULL,
+tag          INT NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO Tasks (user_email, description, tags) VALUES ('user01@example.com', 'First Task', 1);
+
+INSERT INTO Tasks (user_email, description, tags) VALUES ('user01@example.com', 'Second Task', 2);
+
+INSERT INTO Tasks (user_email, description, tags) VALUES ('user01@example.com', 'Third Task', 3);
+
+INSERT INTO Tasks (user_email, description, tags) VALUES ('user01@example.com', 'Fourth Task', 3);
+
+INSERT INTO Tasks (user_email, description, tags) VALUES ('user01@example.com', 'Fifth Task', 1);
+
+INSERT INTO Tasks (user_email, description, tags) VALUES ('user02@example.com', 'First Task', 2);
